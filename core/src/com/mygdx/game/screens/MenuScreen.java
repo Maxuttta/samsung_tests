@@ -1,0 +1,8 @@
+package com.mygdx.game.screens;
+import com.badlogic.gdx.*; import com.badlogic.gdx.graphics.*; import com.badlogic.gdx.math.Vector3; import com.badlogic.gdx.utils.ScreenUtils; import com.mygdx.game.*; import com.mygdx.game.views.*;
+public class MenuScreen extends ScreenAdapter {private final MyGdxGame game;private final ImageView background;private final TextView title;private final ButtonView start,settings,exit;
+ public MenuScreen(MyGdxGame g){game=g;background=new ImageView(0,0,GameResources.BACKGROUND_IMG_PATH);title=new TextView(g.largeWhiteFont,180,960,"Space Cleaner");start=new ButtonView(140,646,440,70,g.commonBlackFont,GameResources.BUTTON_LONG_BG_IMG_PATH,"start");settings=new ButtonView(140,551,440,70,g.commonBlackFont,GameResources.BUTTON_LONG_BG_IMG_PATH,"settings");exit=new ButtonView(140,456,440,70,g.commonBlackFont,GameResources.BUTTON_LONG_BG_IMG_PATH,"exit");}
+ private void input(){if(!Gdx.input.justTouched())return;game.touch=game.camera.unproject(new Vector3(Gdx.input.getX(),Gdx.input.getY(),0));if(start.isHit(game.touch.x,game.touch.y))game.setScreen(game.gameScreen);else if(settings.isHit(game.touch.x,game.touch.y))game.setScreen(game.settingsScreen);else if(exit.isHit(game.touch.x,game.touch.y))Gdx.app.exit();}
+ @Override public void render(float d){input();game.camera.update();game.batch.setProjectionMatrix(game.camera.combined);ScreenUtils.clear(Color.CLEAR);game.batch.begin();background.draw(game.batch);title.draw(game.batch);start.draw(game.batch);settings.draw(game.batch);exit.draw(game.batch);game.batch.end();}
+ @Override public void dispose(){background.dispose();title.dispose();start.dispose();settings.dispose();exit.dispose();}
+}

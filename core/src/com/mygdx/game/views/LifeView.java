@@ -1,0 +1,3 @@
+package com.mygdx.game.views;
+import com.badlogic.gdx.graphics.Texture; import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+public class LifeView extends View {private final Texture texture;private int lives;public LifeView(float x,float y){super(x,y);texture=new Texture("textures/life.png");width=texture.getWidth();height=texture.getHeight();}public void setLeftLives(int n){lives=n;}public void draw(SpriteBatch b){int gap=6;if(lives>0)b.draw(texture,x+width+gap,y,width,height);if(lives>1)b.draw(texture,x,y,width,height);if(lives>2)b.draw(texture,x+2*(width+gap),y,width,height);}public void dispose(){texture.dispose();}}

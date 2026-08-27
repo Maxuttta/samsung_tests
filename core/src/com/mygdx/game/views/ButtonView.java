@@ -1,0 +1,3 @@
+package com.mygdx.game.views;
+import com.badlogic.gdx.graphics.Texture; import com.badlogic.gdx.graphics.g2d.*;
+public class ButtonView extends View {private final Texture texture;private final BitmapFont font;private final String text;public ButtonView(float x,float y,float w,float h,BitmapFont f,String path,String t){super(x,y,w,h);font=f;text=t;texture=new Texture(path);}public void draw(SpriteBatch b){b.draw(texture,x,y,width,height);if(font!=null){GlyphLayout l=new GlyphLayout(font,text);font.draw(b,text,x+(width-l.width)/2,y+(height+l.height)/2);}}public void dispose(){texture.dispose();}}

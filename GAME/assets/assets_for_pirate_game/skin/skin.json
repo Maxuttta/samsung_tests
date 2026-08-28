@@ -1,0 +1,108 @@
+{
+com.badlogic.gdx.graphics.g2d.BitmapFont: {
+	BungeeSpice-Regular: {
+		file: BungeeSpice-Regular.fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+	piratheregular: {
+		file: piratheregular-m2zvp.fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+}
+com.badlogic.gdx.graphics.Color: {
+	accent: {
+		r: 0.36862746
+		g: 0.5568628
+		b: 1
+		a: 1
+	}
+	gray: {
+		r: 0.6117647
+		g: 0.6117647
+		b: 0.6117647
+		a: 1
+	}
+	semi-accent: {
+		r: 0.77254903
+		g: 0.7372549
+		b: 0.9882353
+		a: 1
+	}
+	white: {
+		r: 1
+		g: 1
+		b: 1
+		a: 1
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+	buttonForward: {
+		up: button-forward-up.9
+		down: button-forward-down.9
+		over: button-forward-over.9
+	}
+	buttonUp: {
+		up: button-up-up.9
+		down: button-up-down.9
+		over: button-up-over.9
+	}
+	buttonAttack: {
+		up: butotn-attcak-up.9
+		down: button-attack-down.9
+		over: button-attck-over.9
+	}
+	buttonBack: {
+		up: button-back-up.9
+		down: button-back-down.9
+		over: button-back-over.9
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+	default: {
+		font: piratheregular
+		fontColor: white
+	}
+	labelTitle: {
+		font: BungeeSpice-Regular
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
+	default: {
+		font: piratheregular
+		fontColorSelected: white
+		fontColorUnselected: gray
+		selection: selected-item.9
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
+	default: {
+		background: scrollpanel.9
+		vScroll: scroll-vertical.9
+		vScrollKnob: scroll-vertical-knob.9
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+	default: {
+		font: piratheregular
+		fontColor: white
+		up: button-up.9
+		down: button-down.9
+		over: button-over.9
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+	default: {
+		label: default
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
+	default: {
+		background: window.9
+		titleFont: piratheregular
+	}
+}
+}

@@ -40,8 +40,8 @@ public class MyGdxGame extends ApplicationAdapter {
     private enum State { MENU, SETTINGS, PLAYING, PAUSED, ENDED } private State state=State.MENU;
     private int selected, unlocked, level, score, lives; private float px,py,vx,vy,time,attack,hurt,deathTime; private boolean ground, right=true, playerDead; private String endText="";
     private Rectangle player=new Rectangle(), finish=new Rectangle(); private Array<Rectangle> floors=new Array<Rectangle>(), ladders=new Array<Rectangle>(); private Array<Item> gems=new Array<Item>(), boxes=new Array<Item>(); private Array<Enemy> foes=new Array<Enemy>();
-    private static class Item { Rectangle r; boolean gone; float breaking=-1; Item(float x,float y,float w,float h){r=new Rectangle(x,y,w,h);} }
-    private static class Enemy { Rectangle r, hit; float lo,hi,dir=1,vy; boolean grounded, defeated; Enemy(float x,float y,float lo,float hi){r=new Rectangle(x,y,34,30);hit=new Rectangle();this.lo=lo;this.hi=hi;syncHit();}void syncHit(){hit.set(r.x+5,r.y+2,24,25);} }
+    private static class Item { private Rectangle r; private boolean gone; private float breaking=-1; Item(float x,float y,float w,float h){r=new Rectangle(x,y,w,h);} }
+    private static class Enemy { private Rectangle r, hit; private float lo,hi,dir=1,vy; private boolean grounded, defeated; Enemy(float x,float y,float lo,float hi){r=new Rectangle(x,y,34,30);hit=new Rectangle();this.lo=lo;this.hi=hi;syncHit();}private void syncHit(){hit.set(r.x+5,r.y+2,24,25);} }
 
     @Override public void create(){
         batch=new SpriteBatch();FreeTypeFontGenerator generator=new FreeTypeFontGenerator(Gdx.files.internal("assets/fonts/Montserrat-Bold.ttf"));FreeTypeFontGenerator.FreeTypeFontParameter parameter=new FreeTypeFontGenerator.FreeTypeFontParameter();parameter.size=22;parameter.characters=FreeTypeFontGenerator.DEFAULT_CHARS+"АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя";font=generator.generateFont(parameter);generator.dispose();font.getData().setScale(1.25f); camera=new OrthographicCamera(); viewport=new ExtendViewport(W,H,camera);
